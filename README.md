@@ -23,5 +23,8 @@ git cms-addpkg Geometry/HGCalCommonData
 git cms-addpkg Geometry/HGCalGeometry
 git cms-addpkg Geometry/Records
 
-
+git clone https://github.com/Bharat0014/HGCalDetIDvalidation.git
+scram b -j 8
+cd HGCalDetIDvalidation/python
+cmsRun 
 
