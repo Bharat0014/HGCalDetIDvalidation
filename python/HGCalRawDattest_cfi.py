@@ -7,28 +7,6 @@ process = cms.Process('PROD', Phase2C17I13M9)
 # Load necessary configurations
 process.load('Configuration.Geometry.GeometryExtended2026D110Reco_cff')
 process.load('Geometry.HGCalGeometry.HGCalGeometryESProducer_cfi')
-
-# Configure MessageLogger for debugging
-process.load("FWCore.MessageService.MessageLogger_cfi")
-process.MessageLogger = cms.Service("MessageLogger",
-    destinations = cms.untracked.vstring('cerr', 'log'),
-    cerr = cms.untracked.PSet(
-        threshold = cms.untracked.string('DEBUG'),
-        DEBUG = cms.untracked.PSet(
-            limit = cms.untracked.int32(0)
-        )
-    ),
-    log = cms.untracked.PSet(
-        threshold = cms.untracked.string('INFO'),
-        INFO = cms.untracked.PSet(
-            limit = cms.untracked.int32(-1)
-        ),
-        default = cms.untracked.PSet(
-            limit = cms.untracked.int32(-1)
-        )
-    )
-)
-
 # Define the source
 process.source = cms.Source("EmptySource")
 
@@ -39,7 +17,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Define the DetIdNewProducer module
 process.HGCalRawDettest = cms.EDProducer('HGCalRawDettest',
-    infoFileName = cms.string("detid_EE1.csv"),
+    infoFileName = cms.string("/eos/user/b/bsirasva/DetIdGeneration/detid_EElayer26.csv"),
 )
 
 process.out = cms.OutputModule("PoolOutputModule",
