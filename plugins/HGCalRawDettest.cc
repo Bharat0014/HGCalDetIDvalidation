@@ -83,6 +83,7 @@ private:
     TGraph* graphType0;
     TGraph* graphType1;
     TGraph* graphType2;
+    TGraph* graphType3;
 };
 
 HGCalRawDettest::HGCalRawDettest(const edm::ParameterSet& iConfig)
@@ -94,6 +95,7 @@ HGCalRawDettest::HGCalRawDettest(const edm::ParameterSet& iConfig)
       graphType0 = new TGraph();
       graphType1 = new TGraph();
       graphType2 = new TGraph();
+      graphType3 = new TGraph();
         
       }
 
@@ -127,13 +129,14 @@ void HGCalRawDettest::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
   edm::LogInfo("HGCalRawDet") << "Successfully retrieved HGCalGeometry.";
 
  std::ofstream csvFile;
- csvFile.open("valid_siliconEE.csv", std::ios::out); // Overwrite mode
+ csvFile.open("valid_siliconEELayer26.csv", std::ios::out); // Overwrite mode
  
  std::ofstream csvFile3;
  csvFile3.open("invalid_siliconEE.csv", std::ios::out); // Overwrite mode
 
-int pointIndex0 = 0, pointIndex1 = 0, pointIndex2 = 0;
+int pointIndex0 = 0, pointIndex1 = 0, pointIndex2 = 0,  pointIndex3 = 0;
 
+std::array<int, 4> validHitsPerwaferEE = {};    // For EE
 
 
 std::ifstream inputFile(infoFileName_);
@@ -159,14 +162,14 @@ std::ifstream inputFile(infoFileName_);
  
    bool validEE = false; 
    double xs =0, ys=0;
-    
+   int wafer_type =0;
    if(det_type == 8){
     validEE = geomEE.topology().valid(DetID);
-    
+    //std::cout <<det_type<<"," <<DetID<<"\n"; 
     if(validEE){
    
-    csvFile <<det_type<<"," <<DetID<<"\n";
- 
+    //csvFile <<det_type<<"," <<DetID<<"\n";
+    //std::cout <<det_type<<"," <<DetID<<"\n";
     HGCSiliconDetId hgcalDetId(DetID);
     GlobalPoint posEE = geomEE.getPosition(hgcalDetId.rawId());
     xs = posEE.x();
@@ -176,7 +179,7 @@ std::ifstream inputFile(infoFileName_);
    
    
     int detector_type = hgcalDetId.det();       // Detector type
-     int wafer_type = hgcalDetId.type();         // Wafer type
+     wafer_type = hgcalDetId.type();         // Wafer type
      int z_side = hgcalDetId.zside();            // z-side
      int layer_number = hgcalDetId.layer();      // Layer number
      int abs_v = hgcalDetId.waferV();            // Absolute value of wafer v
@@ -208,15 +211,20 @@ std::ifstream inputFile(infoFileName_);
 	   
        if(z_side == 1){
 	 if (wafer_type == 0) {
+	    
             graphType0->SetPoint(pointIndex0++, xs, ys);
         } else if (wafer_type == 1) {
             graphType1->SetPoint(pointIndex1++, xs, ys);
         } else if (wafer_type == 2) {
             graphType2->SetPoint(pointIndex2++, xs, ys);
         }
+         else if(wafer_type == 3){
+	    graphType3->SetPoint(pointIndex3++, xs, ys);
+	 }
+      
        }
     
-
+    validHitsPerwaferEE[wafer_type]++;
   
     }
     else{
@@ -225,46 +233,69 @@ std::ifstream inputFile(infoFileName_);
    
      }
    }
-    
+ 
+
  
 
 }
 
-  inputFile.close();
+ inputFile.close();
+   std::cout<<pointIndex0<<"   "<<pointIndex1<<"  "<<pointIndex2<<std::endl;
+ 
+ std::ofstream eeFile("valid_waferType_26_layer_EE.csv");
+eeFile << "Layer,EE Hits\n";
+for (size_t i = 0; i < 4; ++i) {
+    eeFile << (i) << "," << validHitsPerwaferEE[i] << "\n";
+}
+eeFile.close();
  
 
     
 TCanvas c1("c1", "Wafer Type Graph 0", 800, 600);
+graphType0->SetTitle("Wafer Type 0;X (cm);Y (cm)");
 graphType0->SetMarkerColor(kRed);  
 graphType0->SetMarkerStyle(6);    
 graphType0->GetXaxis()->SetLimits(-200, 200); 
 graphType0->SetMinimum(-200);                // Y minimum
 graphType0->SetMaximum(200);
 graphType0->Draw("AP"); 
-c1.SaveAs("EE_xVsy_type0.png");
+c1.SaveAs("EElayer26_xVsy_type0.png");
 
 TCanvas c2("c2", "Wafer Type 1", 800, 600);
+graphType1->SetTitle("Wafer Type 1;X (cm);Y (cm)");
 graphType1->SetMarkerColor(kYellow);
 graphType1->SetMarkerStyle(6);
 graphType1->GetXaxis()->SetLimits(-200, 200); 
 graphType1->SetMinimum(-200);                // Y minimum
     graphType1->SetMaximum(200);
 graphType1->Draw("AP");
-c2.SaveAs("EE_xVsy_type1.png");
+c2.SaveAs("EElayer26_xVsy_type1.png");
 
 TCanvas c3("c3", "Wafer Type 2", 800, 600);
+graphType2->SetTitle("Wafer Type 2;X (cm);Y (cm)");
 graphType2->SetMarkerColor(kBlue);
 graphType2->SetMarkerStyle(6);
 graphType2->GetXaxis()->SetLimits(-200, 200); // X range from 0 to 5
 graphType2->SetMinimum(-200);                // Y minimum
 graphType2->SetMaximum(200);
 graphType2->Draw("AP");
-c3.SaveAs("EE_xVsy_type2.png");
-    
+c3.SaveAs("EElayer26_xVsy_type2.png");
+   
+TCanvas c4("c4", "Wafer Type 3", 800, 600);
+graphType3->SetTitle("Wafer Type 3;X (cm);Y (cm)");
+graphType3->SetMarkerColor(40);
+graphType3->SetMarkerStyle(6);
+graphType3->GetXaxis()->SetLimits(-200, 200); // X range from 0 to 5
+graphType3->SetMinimum(-200);                // Y minimum
+graphType3->SetMaximum(200);
+graphType3->Draw("AP");
+c4.SaveAs("EElayer26_xVsy_type3.png");
+
 
 delete graphType0;
 delete graphType1;
 delete graphType2;
+delete graphType3;
 
 
   }
