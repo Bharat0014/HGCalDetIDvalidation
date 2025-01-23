@@ -100,9 +100,25 @@ cmsDriver.py step3  -s RAW2DIGI,RECO,RECOSIM,PAT,VALIDATION:@phase2Validation+@m
 ```
 
 ### 4. Visualization with Fireworks
-The Fireworks visualization tool was configured to:
-- Display raw DetIDs interactively.
-- Enable visual verification of the processed data.
+
+The Fireworks visualization tool was configured to:  
+
+#### Steps to Visualize Raw DetIDs
+1. **Generate the Geometry File**:
+   - Use the following command to create a geometry file for the 2026 tag D110 configuration:  
+     ```
+     cmsRun Fireworks/Geometry/python/dumpSimGeometry_cfg.py tag=2026 version=D110
+     ```
+   - This command generates the geometry file: `cmsSimGeom-2026D110.root`.
+
+2. **Run Fireworks for Visualization**:
+   - Use the generated geometry file and the `step3.root` file to visualize the DetIDs:  
+     ```
+     cmsShow --sim-geom-file ../cmsSimGeom-2026D110.root step3.root
+     ```
+
+This process enables an interactive and detailed inspection of raw DetIDs, ensuring accuracy in the data processing workflow.
+
 
 ---
 
@@ -114,20 +130,3 @@ The Fireworks visualization tool was configured to:
 
 ---
 
-## Usage
-1. **Run the SimHit producer** to generate the `step1.root` file:
-   ```bash
-   cmsRun SimHitProducer_cfg.py
-
-
-#HGCal Raw Data Processing and SimHit Producer
-
-## Description
-This repository contains a producer for validating the DetID in the HGCal detector. It is designed to work within the CMSSW framework.
-
-## Setup Instructions
-
-Follow these steps to set up and run the producer in the CMSSW environment:
-
-cd HGCalDetIDvalidation/python
-cmsRun HGCalRawDattest_cfi.py
