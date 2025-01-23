@@ -96,7 +96,7 @@ To check and count the total number of valid DetIDs and plotes for each HGCal ge
   - **HGCalHEScintillatorSensitive**: [HGCalRawValidHEScintillator.cc](https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/plugins/HGCalRawValidHEScintillator.cc)  
 - The corresponding configuration files are also provided for ease of use.
 
-#### Validation plots For EE layer1:
+#### Validation plots For EE layer 1:
 
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type0.png" alt="Image 1" width="30%" />
@@ -104,12 +104,18 @@ To check and count the total number of valid DetIDs and plotes for each HGCal ge
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type2.png" alt="Image 3" width="30%" />
 </div>
 
-#### Validation plots For HESilicon layer27:
+#### Validation plots For HESilicon layer 27:
 
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HElayer1_xVsy_type0.png" alt="Image 1" width="30%" />
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HElayer1_xVsy_type1.png" alt="Image 2" width="30%" />
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HElayer1_xVsy_type2.png" alt="Image 3" width="30%" />
+</div>
+
+#### Validation plots For HEScintillator layer 45:
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer19.png" alt="Image 1" width="30%" />
 </div>
 
 #### Key Features
