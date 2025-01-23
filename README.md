@@ -11,7 +11,7 @@ Processing raw data for the HGCal detector involves converting Raw Hits (SimHits
 ## 1. Set Up the CMSSW Environment
 First, ensure you are using the correct CMSSW version. Set up the environment as follows:
 
-```bash
+```
 # Load the CMSSW version
 cd /path/to/your/working/directory
 cmsrel CMSSW_14_1_0_pre2
@@ -29,7 +29,7 @@ git clone https://github.com/Bharat0014/HGCalDetIDvalidation.git
 scram b -j 8
 cd HGCalDetIDvalidation/python
 cmsRun HGCalRawDattest_cfi.py
-
+```
 ## Features
 
 ### 1. Development of SimHit Producer
