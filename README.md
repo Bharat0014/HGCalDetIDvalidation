@@ -55,18 +55,35 @@ A specialized producer was implemented to:
    - Additional branches such as `HEPMCProducer` and `genProduct` are created using a **Pythia8 generator**, defined in the configuration file.
    - The Pythia8 generator ensures that all required branches are present in the `step1.root` file without interfering with the data filled by the producer.
 
+```
+cd HGCalDetIDvalidation/python
+cmsRun newupdated_cfi.py
+```
+
 Using this method, the `step1.root` file is generated successfully, with all necessary branches in place. When this file is used as input for the step2 process, it works without any errors or conflicts.
 
 ### 2. Validation of DetID
-To ensure consistency with HGCal geometry, two key issues were addressed:
-- **Layer Number Validation**: Confirming that DetIDs correspond to the correct detector layers.
-- **Radius (R) Calculation of Layers**: Using `DDDConstant` to validate radial positions of layers, ensuring alignment with HGCal geometry.
 
-Additionally, validation was extended to **subgroups based on wafer types**, distinguishing between:
-- Full wafers.
-- Partial wafers.
+To check and count the total number of valid DetIDs and plotes for each HGCal geometry, we provide separate codes for the following geometries to minimize complexity and confusion:
+- **HGCalEESensitive**  
+- **HGCalHESiliconSensitive**  
+- **HGCalHEScintillatorSensitive**  
 
-This approach ensures precise representation of HGCal segmentation.
+#### Code and Configuration Files
+- Each geometry has a dedicated validation code:
+  - **HGCalEESensitive**: [CodeName_EE.cc](#)   
+  - **HGCalHESiliconSensitive**: [CodeName_HESi.cc](#)  
+  - **HGCalHEScintillatorSensitive**: [CodeName_HEScint.cc](#)  
+- The corresponding configuration files are also provided for ease of use.
+
+#### Key Features
+- **Input**: The validation code takes a CSV file containing data for a particular layer as input.
+- **Capabilities**:
+  - Checks specific wafer cell hits for the given geometry layer and can get total number of valid detIDs as per wafer type, as per layer and as per detector type.
+  - For **EE** and **HESilicon**, includes validation of partial wafers, comparing them against the raw data for consistency.
+
+Using this structured approach, the validation process ensures precise alignment of DetIDs with HGCal geometry.  
+
 
 ### 3. Multi-Step Processing Pipeline
 The raw data processing involves the following steps:
