@@ -1,4 +1,4 @@
-#HGCal Raw Data Processing and SimHit Producer
+##HGCal Raw Data Processing and SimHit Producer
 
 ## Description
 This repository contains a producer for validating the DetID in the HGCal detector. It is designed to work within the CMSSW framework.
