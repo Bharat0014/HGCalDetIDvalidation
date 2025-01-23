@@ -30,7 +30,7 @@ git cms-addpkg Fireworks
 
 ```
 
-### 3. git clone this repo.
+### 3. Git clone this repo.
 ```
 git clone https://github.com/Bharat0014/HGCalDetIDvalidation.git
 scram b -j8
@@ -45,8 +45,8 @@ A specialized producer was implemented to:
 - Store intermediate results in `step1.root` for validation and subsequent processing.
 
 #### Step1.root Generation
-- The `HGCalRawDetNewMethod.cc` code, available in the `plugins` folder, is used for generating the `step1.root` file.
-- The corresponding configuration file, `newupdated_cfg.py`, is located in the `python` folder.
+- The `HGCalRawProducer.cc` code, available in the `plugins` folder, is used for generating the `step1.root` file.
+- The corresponding configuration file, `HGCalRawProducer_cfi.py`, is located in the `python` folder.
 - You must specify the input raw DetIDs file in the configuration file to run the process.
 
 #### Workflow
@@ -72,9 +72,9 @@ To check and count the total number of valid DetIDs and plotes for each HGCal ge
 
 #### Code and Configuration Files
 - Each geometry has a dedicated validation code:
-  - **HGCalEESensitive**: [CodeName_EE.cc](#)   
-  - **HGCalHESiliconSensitive**: [CodeName_HESi.cc](#)  
-  - **HGCalHEScintillatorSensitive**: [CodeName_HEScint.cc](#)  
+  - **HGCalEESensitive**: [HGcalRawValidEE.cc](#)   
+  - **HGCalHESiliconSensitive**: [HGCalRawValidHESilicon.cc](#)  
+  - **HGCalHEScintillatorSensitive**: [HGCalRawValidHEScintillator.cc](#)  
 - The corresponding configuration files are also provided for ease of use.
 
 #### Key Features
@@ -108,6 +108,7 @@ The Fireworks visualization tool was configured to:
 1. **Generate the Geometry File**:
    - Use the following command to create a geometry file for the 2026 tag D110 configuration:  
      ```
+     cd $CMSSW/src
      cmsRun Fireworks/Geometry/python/dumpSimGeometry_cfg.py tag=2026 version=D110
      ```
    - This command generates the geometry file: `cmsSimGeom-2026D110.root`.
