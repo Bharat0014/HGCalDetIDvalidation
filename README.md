@@ -56,6 +56,14 @@ This script generates all possible combinations of raw DetIDs in csv formate  fo
 python3 DetIDEE_HElayers.py
 python3 DetIDHEScintillator.py
 ```
+**Generated DetIDs Summary**  
+- **Total number of DetIDs**:  
+  - **EE**: 67,837,952  
+  - **HESilicon**: 54,792,192  
+  - **HEScintillator**: 7,660,814  
+
+These are the generated DetIDs for all the layers of the HGCal geometry, covering all possible combinations for the above configurations. Now, we have to validate the generated DetIDs using our validation producer.
+
 
 
 ## 1. Validation of DetID
