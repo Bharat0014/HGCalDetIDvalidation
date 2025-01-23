@@ -30,7 +30,7 @@ git cms-addpkg Fireworks
 
 ```
 
-### 3. git clone this repo.
+### 3. Git clone this repo.
 ```
 git clone https://github.com/Bharat0014/HGCalDetIDvalidation.git
 scram b -j8
