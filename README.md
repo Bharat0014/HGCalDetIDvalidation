@@ -33,8 +33,7 @@ git cms-addpkg Geometry/Records
 ```
 git clone https://github.com/Bharat0014/HGCalDetIDvalidation.git
 scram b -j 8
-cd HGCalDetIDvalidation/python
-cmsRun HGCalRawDattest_cfi.py
+
 ```
 ## Features
 
@@ -43,6 +42,20 @@ A specialized producer was implemented to:
 - Process raw SimHit data.
 - Convert RawHits(DetIds) into `pCaloHits`.
 - Store intermediate results in `step1.root` for validation and subsequent processing.
+
+#### Step1.root Generation
+- The `HGCalRawDetNewMethod.cc` code, available in the `plugins` folder, is used for generating the `step1.root` file.
+- The corresponding configuration file, `newupdated_cfg.py`, is located in the `python` folder.
+- You must specify the input raw DetIDs file in the configuration file to run the process.
+
+#### Workflow
+1. **Input CSV File**: The process begins with a CSV file containing the required Det_type and DetID and information. This file serves as the input for the producer.
+2. **Populating g4SimHits**: The producer generates all the necessary `g4SimHits` branches. However, only the relevant branches—`HGCHitsEE`, `HGCHitsHEback`, and `HGCHitsHEfront`—are populated with data, while the rest remain empty.
+3. **Additional Branches**: 
+   - Additional branches such as `HEPMCProducer` and `genProduct` are created using a **Pythia8 generator**, defined in the configuration file.
+   - The Pythia8 generator ensures that all required branches are present in the `step1.root` file without interfering with the data filled by the producer.
+
+Using this method, the `step1.root` file is generated successfully, with all necessary branches in place. When this file is used as input for the step2 process, it works without any errors or conflicts.
 
 ### 2. Validation of DetID
 To ensure consistency with HGCal geometry, two key issues were addressed:
@@ -91,3 +104,5 @@ This repository contains a producer for validating the DetID in the HGCal detect
 
 Follow these steps to set up and run the producer in the CMSSW environment:
 
+cd HGCalDetIDvalidation/python
+cmsRun HGCalRawDattest_cfi.py
