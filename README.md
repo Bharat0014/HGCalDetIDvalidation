@@ -91,7 +91,7 @@ To check and count the total number of valid DetIDs and plotes for each HGCal ge
 
 #### Code and Configuration Files
 - Each geometry has a dedicated validation code:
-  - **HGCalEESensitive**: [https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/plugins/HGCalRawValidEE.cc](#)   
+  - **HGCalEESensitive**: [HGCalRawValidEE.cc](https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/plugins/HGCalRawValidEE.cc)   
   - **HGCalHESiliconSensitive**: [HGCalRawValidHESilicon.cc](#)  
   - **HGCalHEScintillatorSensitive**: [HGCalRawValidHEScintillator.cc](#)  
 - The corresponding configuration files are also provided for ease of use.
