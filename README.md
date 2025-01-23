@@ -74,12 +74,13 @@ To check and count the total number of valid DetIDs and plotes for each HGCal ge
 
 #### Validation plots For EE layer 1:
 
+**Usage** 
 ```
 cd HGCalDetIDvalidation/python
 cmsRun HGCalRawValidEE_cfi.py
 ```
 
-**Usage** 
+
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type0.png" alt="Image 1" width="30%" />
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type1.png" alt="Image 2" width="30%" />
