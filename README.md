@@ -26,6 +26,7 @@ git cms-addpkg Configuration/Geometry
 git cms-addpkg Geometry/HGCalCommonData
 git cms-addpkg Geometry/HGCalGeometry
 git cms-addpkg Geometry/Records
+git cms-addpkg Fireworks
 
 ```
 
