@@ -38,7 +38,7 @@ scram b -j8
 ```
 ## Features
 
-### Code to Generate All Possible Combinations of Raw DetIDs  
+### Code to Generate All Possible Combinations of Raw DetIDs (Input csv for Producer)  
 
 **Description**  
 This script generates all possible combinations of raw DetIDs in csv formate  for the following HGCal subdetectors:  
