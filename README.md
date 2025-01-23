@@ -195,7 +195,7 @@ The Fireworks visualization tool was configured to:
 
      **Usage** 
      ```
-     cmsShow --sim-geom-file ../cmsSimGeom-2026D110.root step3.root
+     cmsShow --sim-geom-file cmsSimGeom-2026D110.root step3.root
      ```
 
 This process enables an interactive and detailed inspection of raw DetIDs, ensuring accuracy in the data processing workflow.
