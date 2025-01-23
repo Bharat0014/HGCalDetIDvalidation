@@ -103,6 +103,7 @@ cd HGCalDetIDvalidation/python
 cmsRun HGCalRawValidEE_cfi.py
 ```
 
+**Usage** 
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type0.png" alt="Image 1" width="30%" />
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type1.png" alt="Image 2" width="30%" />
@@ -111,6 +112,7 @@ cmsRun HGCalRawValidEE_cfi.py
 
 #### Validation plots For HESilicon layer 27:
 
+**Usage** 
 ```
 cd HGCalDetIDvalidation/python
 cmsRun HGCalRawValidHESilicon_cfi.py
@@ -124,13 +126,14 @@ cmsRun HGCalRawValidHESilicon_cfi.py
 
 #### Validation plots For HEScintillator layer 45:
 
+**Usage** 
 ```
 cd HGCalDetIDvalidation/python
 cmsRun HGCalRawValidHEScintillator_cfi.py
 ```
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer19.png" alt="Image 1" width="30%" />
+  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer19.png" alt="Centered Image" width="30%" />
 </div>
 
 #### Key Features
