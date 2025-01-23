@@ -132,9 +132,9 @@ cd HGCalDetIDvalidation/python
 cmsRun HGCalRawValidHEScintillator_cfi.py
 ```
 
-<div style="display: flex; justify-content: center; align-items: center;">
+<p align="center">
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer19.png" alt="Centered Image" width="30%" />
-</div>
+</p>
 
 #### Key Features
 - **Input**: The validation code takes a CSV file containing data for a particular layer as input.
