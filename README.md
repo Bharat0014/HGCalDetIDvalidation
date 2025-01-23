@@ -38,6 +38,23 @@ scram b -j8
 ```
 ## Features
 
+### Code to Generate All Possible Combinations of Raw DetIDs  
+
+**Description**  
+This script generates all possible combinations of raw DetIDs in csv formate  for the following HGCal subdetectors:  
+- **EE (Electromagnetic Endcap)**  
+- **HESilicon (Hadronic Endcap Silicon Layers)**  
+- **HEScintillator (Hadronic Endcap Scintillator Layers)**  
+
+**Key Features**  
+- Ensures that all valid combinations align with HGCal geometry definitions.  
+
+**Usage**  
+```
+python3 DetIDEE_HElayers.py
+python3 DetIDHEScintillator.py
+```
+
 ### 1. Development of SimHit Producer
 A specialized producer was implemented to:
 - Process raw SimHit data.
