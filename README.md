@@ -47,6 +47,8 @@ This script generates all possible combinations of raw DetIDs in csv formate  fo
 - **HEScintillator (Hadronic Endcap Scintillator Layers)**  
 
 **Key Features**  
+
+![DetID Generation Parameter](Screenshot from 2025-01-23 18-35-54.png)
 - Ensures that all valid combinations align with HGCal geometry definitions.  
 
 **Usage**  
