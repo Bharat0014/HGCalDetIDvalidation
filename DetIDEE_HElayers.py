@@ -5,7 +5,7 @@ def generate_all_hgcal_silicon_detids():
     combinations = []
     counter = 0  # Initialize a counter for combinations
     
-    for detector_type in [8]:  # [28:31] (1000 or 1001)
+    for detector_type in [8]:  # [28:31] (1000 or 1001) (8 for EE , 9 for HESilicon)
         # Set the layer range based on the detector typ
         for wafer_type in range(0, 4):  # [26:27] (00, 01, 10, 11)
             for z_side in range(0, 2):  # [25:25] (0 or 1)
@@ -67,5 +67,5 @@ with open('detid_EElayer26.csv', mode='w', newline='') as file:
     for det_type, detid in combined_detid_list:
         writer.writerow([det_type, detid])  # Write DetectorType and DetID in the file
 
-print(f"\nGenerated all possible HGCal DetIDs (Silicon and Scintillator) and stored them in 'detid_list_all_combinations.csv'")
+print(f"\nGenerated all possible HGCal DetIDs (EE and HESilicon)")
 
