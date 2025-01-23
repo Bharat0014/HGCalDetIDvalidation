@@ -99,9 +99,9 @@ To check and count the total number of valid DetIDs and plotes for each HGCal ge
 #### Validation plots For EE layer1:
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="path/to/image1.png" alt="Image 1" width="30%" />
-  <img src="path/to/image2.png" alt="Image 2" width="30%" />
-  <img src="path/to/image3.png" alt="Image 3" width="30%" />
+  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type0.png" alt="Image 1" width="30%" />
+  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type1.png" alt="Image 2" width="30%" />
+  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/EElayer1_xVsy_type2.png" alt="Image 3" width="30%" />
 </div>
 
 
