@@ -118,7 +118,7 @@ cmsRun HGCalRawValidHEScintillator_cfi.py
 ```
 
 <p align="center">
-  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer19.png" alt="Centered Image" width="50%" />
+  <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer45.png" alt="Centered Image" width="50%" />
 </p>
 
 #### Key Features
