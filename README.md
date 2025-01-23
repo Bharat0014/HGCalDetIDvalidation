@@ -132,7 +132,7 @@ cd HGCalDetIDvalidation/python
 cmsRun HGCalRawValidHEScintillator_cfi.py
 ```
 
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center;">
   <img src="https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/HESc_Layer19.png" alt="Centered Image" width="30%" />
 </div>
 
