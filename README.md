@@ -77,7 +77,7 @@ A specialized producer was implemented to:
 
 ```
 cd HGCalDetIDvalidation/python
-cmsRun newupdated_cfi.py
+cmsRun HGCalRawProducer_cfi.py
 ```
 
 Using this method, the `step1.root` file is generated successfully, with all necessary branches in place. When this file is used as input for the step2 process, it works without any errors or conflicts.
