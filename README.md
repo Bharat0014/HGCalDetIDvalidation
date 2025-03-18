@@ -38,10 +38,10 @@ scram b -j8
 ```
 ## Features
 
-### Code to Generate All Possible Combinations of Raw DetIDs (Input csv for Producer)  
+### Code to Generate All Possible Raw DetIDs (Input csv for Producer)  
 
 **Description**  
-This script generates all possible combinations of raw DetIDs in csv formate  for the following HGCal subdetectors:  
+This script generates all possible raw DetIDs in csv formate  for the following HGCal subdetectors:  
 - **EE (Electromagnetic Endcap)**  
 - **HESilicon (Hadronic Endcap Silicon Layers)**  
 - **HEScintillator (Hadronic Endcap Scintillator Layers)**  
