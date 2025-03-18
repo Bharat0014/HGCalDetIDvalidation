@@ -62,8 +62,7 @@ python3 DetIDHEScintillator.py
   - **HESilicon**: 54,792,192  
   - **HEScintillator**: 7,660,814  
 
-These are the generated DetIDs for all the layers of the HGCal geometry, covering all possible combinations for the above configurations. Now, we have to validate the generated DetIDs using our validation producer.
-
+These DetIDs cover all layers and valid configurations in the geometry. The next step is to validate them using our validation producer.
 
 
 ## 1. Validation of DetID
