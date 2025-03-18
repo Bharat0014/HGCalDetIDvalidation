@@ -41,7 +41,7 @@ scram b -j8
 ### Code to Generate All Possible Raw DetIDs (Input csv for Producer)  
 
 **Description**  
-This script generates all possible raw DetIDs in csv formate. 
+This script generates all possible raw DetIDs in csv format. 
 
 **Key Features**  
 
