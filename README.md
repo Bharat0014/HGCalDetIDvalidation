@@ -48,7 +48,7 @@ This script generates all possible raw DetIDs in csv formate  for the following 
 
 **Key Features**  
 
-![DetID Generation Parameter](https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/DetIDGeneration.png)
+![DetID Generation Parameter](https://github.com/Bharat0014/HGCalDetIDvalidation/blob/master/DetI)
 - Ensures that all valid combinations align with HGCal geometry definitions.  
 
 **Usage**  
